@@ -54,3 +54,33 @@ function checkPari (num) {
 
     return num + 1 + ' - Hai inserito un numero dispari, quindi ho fatto aggiunto 1 per renderlo pari!';
 }
+
+/**
+ * JSnack 3
+ * Generatore di “nomi cognomi” casuali
+ * prendendo una lista di nomi (‘Michele’, ‘Fabio’, ‘Roberto’) e una lista di cognomi (‘Forghieri’, ‘Papagni’, ‘Marazzini’), Gatsby vuole generare una falsa lista di 5 invitati.
+ */
+
+console.log('******************** JSNACK 3 ********************');
+
+// Creo array nomi
+var nomi = ['Michele', 'Fabio', 'Roberto'];
+
+// Creo array cognomi
+var cognomi = ['Forghieri', 'Papagni', 'Marazzini'];
+
+// Creo array per la lista coi nomi casuali
+var invitatiRandom = [];
+
+// Ciclo for per aggiungere invitati fake all'array vuoto
+for (var i = 1; i <= 5; i++) {
+    var numeroSelettoreNomi = Math.floor(Math.random() * (nomi.length - 1)) + 1;
+    var numeroSelettoreCognomi = Math.floor(Math.random() * (cognomi.length - 1)) + 1;
+
+    var invitatoFake = nomi[numeroSelettoreNomi] + ' ' + cognomi[numeroSelettoreCognomi];
+
+    invitatiRandom.push(invitatoFake);
+}
+
+console.log(invitatiRandom);
+
