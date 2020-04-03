@@ -11,7 +11,7 @@ console.log('******************** JSNACK 1 ********************');
 var primaParola = prompt('Inserisci la prima parola').trim();
 
 // Inserimento seconda parola
-var secondaParola = prompt('Inserisci la prima parola').trim();
+var secondaParola = prompt('Inserisci la seconda parola').trim();
 
 // Stampare parola più lunga grazie alla funzione
 var parolaPiùLunga = checkLunghezza(primaParola, secondaParola);
@@ -55,6 +55,7 @@ function checkPari (num) {
     return num + 1 + ' - Hai inserito un numero dispari, quindi ho fatto aggiunto 1 per renderlo pari!';
 }
 
+
 /**
  * JSnack 3
  * Generatore di “nomi cognomi” casuali
@@ -74,8 +75,8 @@ var invitatiRandom = [];
 
 // Ciclo for per aggiungere invitati fake all'array vuoto
 for (var i = 1; i <= 5; i++) {
-    var numeroSelettoreNomi = Math.floor(Math.random() * (nomi.length - 1)) + 1;
-    var numeroSelettoreCognomi = Math.floor(Math.random() * (cognomi.length - 1)) + 1;
+    var numeroSelettoreNomi = Math.floor(Math.random() * ((nomi.length - 1) - 0 + 1) + 0);
+    var numeroSelettoreCognomi = Math.floor(Math.random() * ((cognomi.length - 1) - 0 + 1) + 0);
 
     var invitatoFake = nomi[numeroSelettoreNomi] + ' ' + cognomi[numeroSelettoreCognomi];
 
@@ -84,3 +85,21 @@ for (var i = 1; i <= 5; i++) {
 
 console.log(invitatiRandom);
 
+
+/**
+ * JSnack Bonus
+ * Crea un array di numeri interi
+ * fai la somma di tutti gli elementi che sono in posizione dispari
+ * Prova prima senza funzione e poi con funzione.
+ */
+
+console.log('******************** JSNACK BONUS ********************');
+
+var numeriInteri = [1, 4, 2, 15, 120, 17, 3];
+var contatore = 0;
+
+for (var i = 1; i < numeriInteri.length; i += 2) {
+    contatore += numeriInteri[i];
+}
+
+console.log('La somma degli elementi in posizione dispari considerato il primo elemento è in posizione 0 è: ' + contatore);
