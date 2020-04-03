@@ -85,7 +85,6 @@ for (var i = 1; i <= 5; i++) {
 
 console.log(invitatiRandom);
 
-
 /**
  * JSnack Bonus
  * Crea un array di numeri interi
@@ -96,10 +95,14 @@ console.log(invitatiRandom);
 console.log('******************** JSNACK BONUS ********************');
 
 var numeriInteri = [1, 4, 2, 15, 120, 17, 3];
-var contatore = 0;
 
-for (var i = 1; i < numeriInteri.length; i += 2) {
-    contatore += numeriInteri[i];
+console.log('La somma degli elementi in posizione dispari è: ' + calcolaDispari(numeriInteri));
+
+function calcolaDispari(array) {
+    var contatore = 0;
+
+    for (var i = 1; i < array.length; i += 2) {
+        contatore += array[i];
+    }
+    return contatore;
 }
-
-console.log('La somma degli elementi in posizione dispari considerato il primo elemento è in posizione 0 è: ' + contatore);
