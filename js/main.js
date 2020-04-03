@@ -9,9 +9,11 @@ console.log('******************** JSNACK 1 ********************');
 
 // Inserimento prima parola
 var primaParola = prompt('Inserisci la prima parola').trim();
+primaParola = checkStringa (primaParola);
 
 // Inserimento seconda parola
 var secondaParola = prompt('Inserisci la seconda parola').trim();
+secondaParola = checkStringa (secondaParola);
 
 // Stampare parola più lunga grazie alla funzione
 var parolaPiùLunga = checkLunghezza(primaParola, secondaParola);
@@ -26,6 +28,14 @@ function checkLunghezza (parola1, parola2) {
     }
 
     return 'Le parole hanno lunghezza uguale'
+}
+
+// Funzione che controlla che non si inserisca un numero
+function checkStringa (parola) {
+    while ((!isNaN(parola)) || parola.length == 0) {
+        parola = prompt('Per favore, non inserire numeri e non lasciare il campo vuoto!').trim();
+    }
+    return parola;
 }
 
 
@@ -85,6 +95,7 @@ for (var i = 1; i <= 5; i++) {
 
 console.log(invitatiRandom);
 
+
 /**
  * JSnack Bonus
  * Crea un array di numeri interi
@@ -94,10 +105,12 @@ console.log(invitatiRandom);
 
 console.log('******************** JSNACK BONUS ********************');
 
+// Inserisco Array
 var numeriInteri = [1, 4, 2, 15, 120, 17, 3];
 
 console.log('La somma degli elementi in posizione dispari è: ' + calcolaDispari(numeriInteri));
 
+// Funzione che somma i dispari di un determinato array
 function calcolaDispari(array) {
     var contatore = 0;
 
