@@ -50,6 +50,9 @@ console.log('******************** JSNACK 2 ********************');
 
 // Inserimento numero
 var numUtente = parseInt(prompt('Inserisci un numero'));
+while ((isNaN(numUtente)) || numUtente.length == 0) {
+    numUtente = parseInt(prompt('Per favore, inserisci un numero e non lasciare il campo vuoto!'))
+}
 
 // Stampo numero dopo aver sfruttato la funzione per capire se era pari
 var stampaNumero = checkPari(numUtente);
@@ -62,7 +65,7 @@ function checkPari (num) {
         return num + ' - Hai inserito un numero pari';
     } 
 
-    return num + 1 + ' - Hai inserito un numero dispari, quindi ho fatto aggiunto 1 per renderlo pari!';
+    return num + 1 + ' - Hai inserito un numero dispari, quindi ho aggiunto 1 per renderlo pari!';
 }
 
 
